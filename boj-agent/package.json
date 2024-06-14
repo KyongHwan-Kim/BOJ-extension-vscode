@@ -1,0 +1,63 @@
+{
+  "name": "boj-agent",
+  "displayName": "BOJ Agent",
+  "description": "BOJ All-in-One VScode Extension",
+  "icon": "images/icon.png", 
+  "repository": "https://github.com/KyongHwan-Kim/BOJ-extension-vscode",
+  "author": "KyongHwan-Kim <kyounghwan1989@gmail.com>",
+  "license": "MIT",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.90.0"
+  },
+  "keywords": [
+		"solvedac",
+		"BOJ",
+		"acmicpc",
+		"백준",
+		"baekjoon"
+	],
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [{
+      "command": "boj-agent.helloWorld",
+      "title": "Hello World"
+    }]
+  },
+  "configuration": {
+			"type": "object",
+			"title": "BOJ-extension",
+			"properties": {
+				"BOJ.author": {
+					"type": "string",
+					"default": "",
+					"description": "백준에서 사용하는 아이디를 적어주세요"
+				},
+				"BOJ.extension": {
+					"type": "string",
+					"default": "",
+					"description": "선호하는 언어의 확장자명을 적어주세요 (ex: cpp, py, java, etc...)"
+				}
+			}
+		},
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "npm run lint",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.90.0",
+    "@types/mocha": "^10.0.6",
+    "@types/node": "18.x",
+    "eslint": "^8.57.0",
+    "typescript": "^5.4.5",
+    "@vscode/test-cli": "^0.0.9",
+    "@vscode/test-electron": "^2.4.0"
+  }
+}
